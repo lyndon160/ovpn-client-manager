@@ -19,11 +19,12 @@ class CursesMenu(object):
         curses.start_color()
         curses.curs_set(0) #Hide cursor
         self.screen.keypad(1)
-
+        self.screen.erase()
         #set up color pair for highlighted option
         curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
         self.hilite_color = curses.color_pair(1)
         self.normal_color = curses.A_NORMAL
+
 
     def prompt_selection(self, parent=None):
         if parent is None:
