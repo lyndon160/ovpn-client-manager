@@ -48,17 +48,11 @@ while selected_action['type'] != 'exitmenu':
         list_items = []
 	for line in lines:
             tmp = line.split(',')
-            print tmp[0] 
-            if tmp[0] != 'name':
+            if 'name' not in tmp[0] and '' != tmp[0]:
                 list_items.append({'title':tmp[0],'type':'key-opts','command':tmp[0]})
 
-        raw_input("Press Enter to continue...") 
-
-
-        list_1 = {'title' : 'test-swine-lyndon.ovpn',
-                    'type' : 'key-opts',
-                    'command' : 'test-swine-lyndon.ovpn'}
-        
+	#        raw_input("Press Enter to continue...") 
+ 
         list_items.append({'title' : 'Add new key',
                     'type' : 'new-key',
                     'command' : 'key name'})
